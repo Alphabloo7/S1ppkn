@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0074D6" />
+  <meta name="description" content="Program Studi S1 Pendidikan Pancasila dan Kewarganegaraan (PPKn) FKIP Universitas Sebelas Maret (UNS) Surakarta — Akreditasi Unggul, Kurikulum Berbasis Karakter, Dosen Pakar, Fasilitas Modern, dan SPMB UNS." />
+  <title>S1 Pendidikan Pancasila dan Kewarganegaraan | FKIP UNS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Palet visual khas UNS: Blue, Cyan, Yellow accent, Dark Footer */
+      --uns-blue:#0074D6;
+      --uns-blue-2:#009BDD;
+      --uns-blue-3:#005AA8;
+      --uns-cyan:#00A8E8;
+      --uns-yellow:#FFDE35;
+      --uns-yellow-2:#F5C91F;
+      --uns-teal:#047EA9;
+      --ink:#1A232E;
+      --muted:#5C6E82;
+      --line:#E2E9F0;
+      --soft:#F4F8FC;
+      --white:#FFFFFF;
+      --footer:#141A22;
+      --shadow:0 12px 32px rgba(0,73,132,.12);
+      --shadow-hover:0 20px 40px rgba(0,73,132,.18);
+      --max:1180px;
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Plus Jakarta Sans","Poppins","Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .container{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+
+    /* --- UNS Utility Topbar --- */
+    .utility{
+      background:#008BBE;
+      color:#fff;
+      font-size:11px;
+      font-weight:700;
+      border-bottom:1px solid rgba(255,255,255,.24);
+    }
+    .utility-inner{height:32px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .utility-left,.utility-right{display:flex;align-items:center;gap:18px;white-space:nowrap}
+    .utility a{opacity:.96;transition:.15s ease}.utility a:hover{opacity:.78}
+    .id-badge{display:inline-flex;align-items:center;gap:6px}
+    .id-dot{width:14px;height:9px;border-radius:1px;background:linear-gradient(#ef3340 0 50%,#fff 50%)}
+    .dikti-badge{background:rgba(255,255,255,.18);padding:2px 8px;border-radius:3px;font-size:10px;letter-spacing:.04em}
+
+    /* --- Main Header --- */
+    .site-header{
+      background:linear-gradient(98deg,var(--uns-blue-2) 0%,var(--uns-blue) 72%);
+      color:#fff;
+      position:relative;
+      z-index:10;
+    }
+    .header-main{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logo{height:48px;width:auto;object-fit:contain;display:block;flex:0 0 auto}
+    .brand-logo--dikti{height:42px}
+    .brand-divider{width:1px;align-self:stretch;margin:6px 0;background:rgba(255,255,255,.32);flex:0 0 auto}
+    .brand-copy{min-width:0}
+    .brand-copy strong{display:block;font-size:16px;line-height:1.15;letter-spacing:.01em;font-weight:800}
+    .brand-copy span{display:block;font-size:11px;opacity:.92;margin-top:3px}
+    .header-search{
+      min-width:275px;display:flex;height:35px;border-radius:5px;overflow:hidden;background:#fff;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);cursor:pointer;
+      scroll-margin-top:60px;
+    }
+    .header-search span{flex:1;color:#7B8791;font-size:11px;display:flex;align-items:center;padding:0 12px}
+    .header-search b{width:38px;display:grid;place-items:center;background:#0C8FC5;color:#fff;font-size:14px}
+
+    /* --- Sticky Program Navigation --- */
+    .program-nav{
+      position:sticky;top:0;z-index:1000;
+      background:#078AC8;color:#fff;
+      border-bottom:5px solid var(--uns-yellow);
+      box-shadow:0 4px 16px rgba(0,70,120,.12);
+    }
+    .program-nav .container{height:46px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .program-name{font-size:12px;font-weight:900;letter-spacing:.03em;white-space:nowrap}
+    .program-menu{
+      display:flex;align-items:center;gap:32px;font-size:12px;font-weight:800;
+      white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    .program-menu::-webkit-scrollbar{display:none}
+    .program-menu a{transition:.15s ease;color:#fff;opacity:.95}
+    .program-menu a:hover{color:var(--uns-yellow);opacity:1}
+    .nav-cta{padding:8px 14px;white-space:nowrap;background:var(--uns-yellow);color:#183143;border-radius:4px;font-weight:900;font-size:12px;transition:.18s ease}
+    .nav-cta:hover{background:#fff;color:var(--uns-blue);transform:translateY(-1px)}
+
+    /* --- Hero Banner Section --- */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        linear-gradient(90deg,rgba(0,116,214,.96),rgba(0,168,232,.82)),
+        radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 28%);
+      min-height:490px;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);
+      background-size:84px 84px;
+      mask-image:linear-gradient(90deg,#000,transparent 85%);
+    }
+    .hero:after{
+      content:"UNS";position:absolute;right:4%;bottom:-78px;font-size:260px;font-weight:950;
+      color:rgba(255,255,255,.055);line-height:1;letter-spacing:-.08em;pointer-events:none;
+    }
+    .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:54px;padding:66px 0 74px}
+    .breadcrumbs{font-size:11px;font-weight:700;opacity:.88;margin-bottom:16px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--uns-yellow)}
+    .hero-kicker:before{content:"";width:34px;height:4px;background:var(--uns-yellow)}
+    .hero h1{font-size:clamp(36px,5.2vw,62px);line-height:1.06;margin:13px 0 18px;letter-spacing:-.03em;max-width:740px;font-weight:900}
+    .hero h1 span{color:var(--uns-yellow);text-shadow:0 4px 20px rgba(0,0,0,.15);display:block}
+    .hero p{font-size:16px;max-width:680px;color:#EAF7FF;margin:0 0 28px;line-height:1.6}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 20px;border-radius:5px;font-weight:900;font-size:12px;border:1px solid transparent;transition:.18s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.18)}
+    .btn-yellow{background:var(--uns-yellow);color:#17364B}
+    .btn-yellow:hover{background:#fff;color:var(--uns-blue)}
+    .btn-outline{border-color:rgba(255,255,255,.72);color:#fff;background:rgba(255,255,255,.06)}
+    .btn-outline:hover{background:#fff;color:var(--uns-blue)}
+    .btn-blue{background:var(--uns-blue);color:#fff}
+    .btn-blue:hover{background:var(--uns-blue-3)}
+
+    /* Hero Card (Floating Card Right Side) */
+    .hero-card{
+      background:rgba(255,255,255,.97);color:var(--ink);border-radius:14px;padding:26px;
+      box-shadow:0 22px 55px rgba(0,57,105,.22);border-top:6px solid var(--uns-yellow);
+    }
+    .hero-card-label{font-size:11px;font-weight:900;color:var(--uns-teal);text-transform:uppercase;letter-spacing:.08em;display:flex;justify-content:space-between;align-items:center}
+    .hero-card-label .tag{background:#E0F2FE;color:#0369A1;padding:3px 8px;border-radius:4px;font-size:10px}
+    .hero-card h3{margin:7px 0 10px;font-size:23px;color:#087CAF;line-height:1.2;font-weight:800}
+    .hero-card p{color:var(--muted);font-size:13px;margin:0 0 20px;line-height:1.55}
+    .hero-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .hero-mini{padding:13px;background:#F2F8FC;border-radius:8px;border:1px solid #DCEBF3}
+    .hero-mini strong{display:block;color:var(--uns-blue);font-size:18px;font-weight:900}
+    .hero-mini span{font-size:10px;color:var(--muted);font-weight:700}
+    .accred{margin-top:13px;padding:11px 12px;border-radius:8px;background:#FFF8CD;border-left:4px solid var(--uns-yellow-2);font-size:11px;color:#5F5320;font-weight:800;display:flex;align-items:center;gap:8px}
+
+    /* --- Shared Section Typography & Layout --- */
+    section{padding:76px 0}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title.left{text-align:left}
+    .section-title h2{margin:0;color:var(--uns-teal);font-size:clamp(26px,3.2vw,38px);line-height:1.15;font-weight:800}
+    .title-line{width:74px;height:4px;background:var(--uns-yellow);margin:11px auto 0;border-radius:2px}
+    .left .title-line{margin-left:0}
+    .section-title p{max-width:740px;margin:16px auto 0;color:var(--muted);font-size:14px;line-height:1.6}
+    .left p{margin-left:0}
+
+    /* --- Highlights Ribbon --- */
+    .highlights{background:#fff;padding-top:60px;padding-bottom:30px}
+    .highlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .highlight{border:1px solid var(--line);border-radius:10px;padding:22px 18px;background:#fff;box-shadow:0 5px 20px rgba(0,70,120,.05);position:relative;overflow:hidden;transition:.2s ease}
+    .highlight:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+    .highlight:before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:var(--uns-yellow)}
+    .highlight strong{display:block;color:var(--uns-blue);font-size:24px;line-height:1.15;font-weight:900}
+    .highlight span{font-size:11px;color:var(--muted);font-weight:700}
+
+    /* --- Poster-aligned Overview Section --- */
+    .poster-summary{background:#fff;padding-top:20px}
+    .poster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .poster-card{border:1px solid var(--line);border-radius:12px;padding:24px 20px;background:#fff;box-shadow:0 5px 20px rgba(0,70,120,.05);border-top:5px solid var(--uns-yellow);transition:.2s ease}
+    .poster-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+    .poster-card h3{margin:0 0 10px;color:var(--uns-teal);font-size:18px;font-weight:800}.poster-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.poster-card strong{color:var(--uns-blue)}
+
+    /* --- Core Study & Competencies Section --- */
+    .core-section{background:var(--soft)}
+    .core-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .core-card{background:#fff;border-radius:12px;padding:30px;border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,70,120,.05);position:relative}
+    .core-card-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--soft)}
+    .core-icon{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--uns-blue),var(--uns-cyan));color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 8px 20px rgba(0,116,214,.2);flex:0 0 auto}
+    .core-card h3{margin:0;color:var(--uns-teal);font-size:20px;font-weight:800}
+    .core-card p.subtitle{margin:3px 0 0;font-size:12px;color:var(--muted);font-weight:600}
+    .core-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .core-list.single-col{grid-template-columns:1fr}
+    .core-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#2C3E50;line-height:1.55;background:#F8FAFC;padding:10px 12px;border-radius:6px;border:1px solid #EAEFF5}
+    .core-list li:before{content:"✓";width:20px;height:20px;border-radius:50%;background:#E0F2FE;color:var(--uns-blue);display:grid;place-items:center;font-weight:900;font-size:10px;flex:0 0 auto;margin-top:1px}
+
+    /* --- Accreditation Section --- */
+    .accreditation{background:#fff}
+    .accredit-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:20px;align-items:stretch}
+    .accredit-main{position:relative;overflow:hidden;border-radius:12px;padding:32px;background:linear-gradient(145deg,#0877D2 0%,#049AD9 100%);color:#fff;box-shadow:0 14px 38px rgba(0,92,160,.16);border-bottom:5px solid var(--uns-yellow);display:flex;flex-direction:column;justify-content:space-between}
+    .accredit-main:after{content:"";position:absolute;width:200px;height:200px;border:36px solid rgba(255,255,255,.08);border-radius:50%;right:-72px;top:-70px;pointer-events:none}
+    .accredit-eyebrow{font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#DDF4FF}
+    .accredit-grade{font-size:56px;line-height:.95;font-weight:950;letter-spacing:-.04em;color:var(--uns-yellow);margin:10px 0 8px}
+    .accredit-score{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:5px;background:rgba(255,255,255,.14);font-size:10.5px;font-weight:850;margin-bottom:19px}
+    .accredit-main h3{font-size:20px;margin:0 0 6px;font-weight:800}.accredit-main p{font-size:12px;color:#DDEFFA;margin:0 0 18px;max-width:500px}
+    .accredit-period{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto}
+    .accredit-period div{padding:12px;border:1px solid rgba(255,255,255,.2);border-radius:7px;background:rgba(255,255,255,.09)}
+    .accredit-period small{display:block;font-size:9px;opacity:.8;text-transform:uppercase;font-weight:800}.accredit-period strong{display:block;font-size:12.5px;margin-top:2px;font-weight:800}
+    .accredit-detail{border:1px solid var(--line);border-radius:12px;padding:28px;background:#F9FCFE}
+    .accredit-detail h3{margin:0 0 6px;color:var(--uns-teal);font-size:21px;font-weight:800}.accredit-detail>p{margin:0 0 18px;color:var(--muted);font-size:12px}
+    .accredit-data{display:grid;gap:0;border-top:1px solid #DCE8F0}
+    .accredit-row{display:grid;grid-template-columns:160px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #DCE8F0;font-size:11.5px}
+    .accredit-row span{color:#71828E;font-weight:700}.accredit-row strong{color:#174F70;overflow-wrap:anywhere;font-weight:700}
+    .accredit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .mini-link{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid #BED8E8;border-radius:4px;color:var(--uns-teal);font-size:11px;font-weight:850;background:#fff;transition:.15s ease}
+    .mini-link:hover{background:#F1F8FC}
+
+    /* --- Admission Pathways (Jalur Masuk) --- */
+    .pathways{background:linear-gradient(180deg,#0877D2 0%,#068EDB 100%);color:#fff;border-top:5px solid var(--uns-yellow);border-bottom:5px solid var(--uns-yellow)}
+    .pathways .section-title h2,.pathways .section-title p{color:#fff}.pathways .section-title p{opacity:.88}
+    .pathways .title-line{background:var(--uns-yellow)}
+    .path-grid{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+    .tab-list{display:grid;gap:10px}
+    .tab-btn{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.09);color:#fff;border-radius:7px;text-align:left;padding:17px 16px;cursor:pointer;font-weight:900;transition:.2s ease}
+    .tab-btn small{display:block;font-size:10px;margin-top:4px;opacity:.82;font-weight:600}
+    .tab-btn.active{background:#fff;color:var(--uns-blue);border-color:#fff;box-shadow:0 12px 30px rgba(0,55,100,.16)}
+    .path-panel{display:none;background:#fff;color:var(--ink);border-radius:10px;padding:28px;box-shadow:var(--shadow)}
+    .path-panel.active{display:block}
+    .path-panel h3{color:var(--uns-teal);font-size:24px;margin:0 0 8px;font-weight:800}.path-panel>p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+    .path-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0}
+    .path-point{padding:13px;border:1px solid var(--line);background:#F8FBFD;border-radius:7px}
+    .path-point strong{display:block;font-size:12px;color:var(--uns-blue);font-weight:800}.path-point span{font-size:10.5px;color:var(--muted)}
+    .note{font-size:11px;background:#FFF8D8;border-left:4px solid var(--uns-yellow);padding:11px 12px;color:#645A2B;border-radius:4px;line-height:1.55}
+
+    /* --- Cooperation & Partnerships Section --- */
+    .cooperation{background:#fff;padding:50px 0}
+    .cooperation-box{background:linear-gradient(100deg,#0877D2,#00A8E8);color:#fff;border-radius:14px;padding:34px;border-bottom:6px solid var(--uns-yellow);display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;box-shadow:0 12px 30px rgba(0,80,150,.15)}
+    .cooperation-box h3{font-size:26px;margin:0 0 8px;font-weight:800}.cooperation-box p{margin:0;color:#EAF7FF;font-size:13.5px}
+    .cooperation-badge{background:var(--uns-yellow);color:#17364B;padding:12px 18px;border-radius:8px;font-weight:950;white-space:nowrap;font-size:12px}
+    .coop-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .coop-tag{background:rgba(255,255,255,.18);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.3)}
+
+    /* --- Faculty & Lecturers Section --- */
+    .faculty{background:#F5F9FC}
+    .expert-banner{background:#fff;border:1px solid #DCE7EF;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;margin-bottom:24px;box-shadow:0 6px 20px rgba(0,74,130,.055)}
+    .expert-brand{display:flex;align-items:center;gap:14px}
+    .expert-mark{width:52px;height:52px;background:linear-gradient(135deg,var(--uns-blue),var(--uns-cyan));color:#fff;border-radius:8px;display:grid;place-items:center;font-weight:950;font-size:18px}
+    .expert-copy strong{display:block;color:var(--uns-teal);font-size:17px;font-weight:800}.expert-copy span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+    .expert-search-box{display:flex;min-width:380px;height:42px;border:1px solid #C7DAE7;border-radius:5px;overflow:hidden;background:#fff}
+    .expert-search-box input{flex:1;border:0;padding:0 14px;font-size:12px;outline:none;color:var(--ink)}
+    .expert-search-box button{width:48px;border:0;background:var(--uns-blue);color:#fff;cursor:pointer;font-size:15px;transition:.15s ease}
+    .expert-search-box button:hover{background:var(--uns-blue-3)}
+
+    .faculty-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 22px}
+    .faculty-stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:15px;text-align:center}
+    .faculty-stat strong{display:block;font-size:24px;color:var(--uns-blue);line-height:1;font-weight:900}
+    .faculty-stat span{font-size:10px;color:var(--muted);font-weight:800}
+
+    .faculty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .person{background:#fff;border:1px solid var(--line);border-radius:9px;padding:18px;position:relative;overflow:hidden;transition:.18s ease;display:flex;flex-direction:column}
+    .person:before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--uns-blue),var(--uns-cyan))}
+    .person:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,73,132,.10)}
+    .person-head{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+    .avatar{width:45px;height:45px;border-radius:50%;background:#E9F4FB;color:var(--uns-blue);border:2px solid #CFE7F5;display:grid;place-items:center;font-weight:950;font-size:12px;flex:0 0 auto}
+    .person h3{margin:0;color:#116F9A;font-size:13px;line-height:1.35;font-weight:800}.person p{margin:4px 0 0;font-size:11px;color:var(--muted)}
+    .chips{margin-top:auto;padding-top:10px}
+    .expert-chip{display:inline-flex;padding:4px 8px;border-radius:3px;background:#F2F8FC;color:#4B6C80;font-size:9.5px;font-weight:800;margin:3px 3px 0 0}
+
+    /* --- Alumni Best Graduate & Testimonials --- */
+    .testimonials-section{background:#fff}
+    .best-graduate{background:linear-gradient(90deg,#FFFDF0,#FFF9DB);border:2px solid var(--uns-yellow);border-radius:14px;padding:26px;margin-bottom:32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;box-shadow:0 8px 24px rgba(245,201,31,.15)}
+    .grad-badge{background:var(--uns-yellow);color:#142B3B;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:900;display:inline-block;margin-bottom:8px}
+    .grad-photo{width:86px;height:86px;border-radius:50%;background:var(--uns-blue);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900;border:4px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+    .grad-info h4{margin:0 0 4px;font-size:18px;color:#0F5B80;font-weight:800}.grad-info p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.55}
+
+    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .testi-card{background:linear-gradient(145deg,#005AA8 0%,#0074D6 100%);color:#fff;border-radius:14px;padding:28px;box-shadow:0 12px 32px rgba(0,73,132,.16);position:relative;display:flex;flex-direction:column;justify-content:space-between}
+    .testi-card.mahasiswa{background:linear-gradient(145deg,#0284C7 0%,#0EA5E9 100%)}
+    .testi-tag{display:inline-flex;align-items:center;gap:6px;background:var(--uns-yellow);color:#142B3B;padding:4px 10px;border-radius:4px;font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;align-self:flex-start;margin-bottom:16px}
+    .testi-quote{font-size:13px;line-height:1.65;color:#F0F9FF;font-style:italic;margin-bottom:20px}
+    .testi-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+    .author-img{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--uns-blue);display:grid;place-items:center;font-weight:900;font-size:14px;border:2px solid var(--uns-yellow)}
+    .author-info strong{display:block;font-size:13.5px;color:#fff;font-weight:800}.author-info span{font-size:11px;color:#DDF4FF}
+
+    /* --- Career Opportunities & Facilities --- */
+    .career-facility{background:var(--soft)}
+    .cf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .cf-box{background:#fff;border-radius:12px;padding:28px;border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,70,120,.04)}
+    .cf-box h3{margin:0 0 16px;color:var(--uns-teal);font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+    .cf-box h3 span{width:32px;height:32px;border-radius:6px;background:#E0F2FE;color:var(--uns-blue);display:grid;place-items:center;font-size:15px}
+    .cf-items{display:grid;gap:12px}
+    .cf-item{padding:12px 14px;background:#F8FAFC;border-left:4px solid var(--uns-cyan);border-radius:0 6px 6px 0;font-size:13px;font-weight:700;color:#1E293B}
+
+    /* --- SPMB Information & Requirements --- */
+    .spmb-info{background:#fff}
+    .spmb-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+    .spmb-stat{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:10px;padding:21px 20px;background:#fff;box-shadow:0 5px 18px rgba(0,70,120,.045)}
+    .spmb-stat:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--uns-blue),var(--uns-cyan))}
+    .spmb-stat strong{display:block;color:var(--uns-blue);font-size:24px;line-height:1.1;margin-bottom:5px;font-weight:900}.spmb-stat span{font-size:11px;color:var(--muted);font-weight:700}
+    .spmb-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    .info-card{border:1px solid var(--line);border-radius:10px;padding:25px;background:#F9FCFE}
+    .info-card h3{margin:0 0 7px;color:var(--uns-teal);font-size:20px;font-weight:800}.info-card>p{margin:0 0 18px;color:var(--muted);font-size:12px}
+    .flow{display:grid;gap:0;counter-reset:step}
+    .flow-step{position:relative;padding:13px 12px 13px 52px;border-top:1px solid #DCE8F0;font-size:11px;color:#536777;min-height:48px}
+    .flow-step:first-child{border-top:0}.flow-step:before{counter-increment:step;content:counter(step);position:absolute;left:7px;top:10px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--uns-blue);color:#fff;font-weight:950;font-size:10px}
+    .flow-step strong{display:block;color:#174F70;font-size:11.5px;font-weight:800}
+    .requirement-list{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .requirement{border:1px solid #DCE8F0;border-radius:7px;padding:12px;background:#fff;font-size:10.5px;color:var(--muted)}
+    .requirement strong{display:block;color:var(--uns-blue);font-size:11px;margin-bottom:2px;font-weight:800}
+    .official-note{margin-top:20px;padding:15px 17px;background:#EEF8FD;border-left:4px solid var(--uns-blue);border-radius:5px;color:#456272;font-size:11px;line-height:1.6}
+    .official-note strong{color:var(--uns-teal);font-weight:800}
+    .source-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+
+    /* --- Bottom Call to Action Section --- */
+    .cta-section{padding:64px 0;background:#fff}
+    .cta-box{background:linear-gradient(90deg,#0875D0,#039DE0);color:#fff;border-radius:10px;padding:38px 42px;border-bottom:6px solid var(--uns-yellow);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;box-shadow:0 14px 35px rgba(0,90,170,.16)}
+    .cta-box h2{font-size:28px;line-height:1.18;margin:0 0 7px;font-weight:800}.cta-box p{font-size:13px;margin:0;color:#EAF7FF;max-width:680px}.cta-actions{display:flex;gap:9px}
+
+    /* --- UNS Dark Footer --- */
+    footer{background:var(--footer);color:#fff;border-top:5px solid var(--uns-yellow);padding:42px 0 20px}
+    .footer-portals{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding-bottom:30px;border-bottom:1px solid #343434}
+    .portal{font-size:18px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em;transition:.15s ease}.portal:hover{color:var(--uns-yellow)}
+    .portal small{display:block;font-size:8px;color:#AFAFAF;margin-top:3px;letter-spacing:.04em;font-weight:600}
+    .foot-grid{display:grid;grid-template-columns:1.35fr .7fr .7fr;gap:52px;padding:34px 0 22px}
+    .foot-brand{margin-bottom:13px;display:flex;align-items:center;gap:12px}
+    .logo-img-foot{height:54px;width:auto;object-fit:contain;display:block}
+    .foot-brand strong{font-size:18px;line-height:1.1;font-weight:800}.foot-text{font-size:10.5px;color:#C5C5C5;max-width:440px;line-height:1.6}.foot-title{font-size:12px;font-weight:900;margin-bottom:9px;color:var(--uns-yellow)}.foot-links{display:grid;gap:6px;font-size:10px;color:#D0D0D0}.foot-links a:hover{color:var(--uns-yellow)}
+    .copyright{text-align:center;border-top:1px solid #343434;padding-top:16px;font-size:9.5px;color:#BEBEBE}
+
+    .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:var(--uns-yellow);color:#17364B;border-radius:6px;padding:12px 16px;text-align:center;font-weight:950;box-shadow:0 13px 35px rgba(0,0,0,.24)}
+
+    /* --- Responsive Breakpoints --- */
+    @media(max-width:1024px){
+      .header-search{min-width:220px}
+      .program-menu{gap:20px}.hero-inner{grid-template-columns:1fr;gap:28px}.hero-card{max-width:650px}
+      .accredit-grid,.core-grid,.cf-grid{grid-template-columns:1fr}
+      .highlight-grid,.poster-grid,.faculty-stats{grid-template-columns:repeat(2,1fr)}.feature-grid,.faculty-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+      .spmb-summary{grid-template-columns:repeat(3,1fr)}.spmb-grid{grid-template-columns:1fr}
+      .path-grid{grid-template-columns:240px 1fr}
+      .expert-banner{grid-template-columns:1fr}.expert-search-box{min-width:0;width:100%}
+      .cta-box{grid-template-columns:1fr}.footer-portals{grid-template-columns:repeat(3,1fr)}
+      .core-list{grid-template-columns:1fr}
+    }
+    @media(max-width:850px){
+      .program-nav .container{height:auto;min-height:46px;padding:8px 0}
+      .program-menu{width:100%;gap:12px;padding:4px 0}
+      .program-menu a{background:rgba(255,255,255,.14);padding:5px 12px;border-radius:4px;font-size:11px}
+      .program-menu a:hover, .program-menu a:active{background:var(--uns-yellow);color:#142B3B}
+      .path-grid{grid-template-columns:1fr}
+      .tab-list{grid-template-columns:repeat(3,1fr);overflow-x:auto}
+      .tab-btn{padding:12px;font-size:11px}
+      .tab-btn small{display:none}
+      .foot-grid{grid-template-columns:1fr;gap:28px}
+    }
+    @media(max-width:640px){
+      .container{width:min(calc(100% - 24px),var(--max))}.utility-right{display:none}.utility-left{gap:10px}
+      .dikti-badge{display:none}
+      .header-main{height:68px;gap:12px}.header-search{display:none}.brand-copy strong{font-size:13.5px}.brand-copy span{font-size:9.5px}.brand{gap:10px}.brand-logo{height:30px}.brand-logo--dikti{height:26px}
+      .program-name{font-size:11.5px}.nav-cta{font-size:10px;padding:6px 12px}
+      .hero-inner{padding:44px 0 54px}.hero h1{font-size:32px}.hero p{font-size:14px}.hero-actions{display:grid;width:100%}.btn{width:100%}
+      .accredit-row{grid-template-columns:1fr;gap:3px}.accredit-period{grid-template-columns:1fr}
+      section{padding:52px 0}.highlight-grid,.poster-grid,.faculty-stats,.feature-grid,.faculty-grid,.testi-grid,.path-points,.requirement-list,.spmb-summary{grid-template-columns:1fr}
+      .tab-list{grid-template-columns:1fr}.tab-btn small{display:block}.path-panel{padding:22px}
+      .cooperation-box{grid-template-columns:1fr}.cooperation-badge{white-space:normal}
+      .best-graduate{grid-template-columns:1fr;text-align:center;padding:20px}.grad-photo{margin:0 auto}
+      .expert-banner{padding:16px}.expert-brand{align-items:flex-start}.expert-mark{width:44px;height:44px}.expert-search-box{height:40px}
+      .cta-box{padding:28px 22px}.cta-actions{display:grid;width:100%}.footer-portals{grid-template-columns:repeat(2,1fr)}
+      .mobile-cta{display:block}body{padding-bottom:70px}
+    }
+    @media(max-width:420px){
+      .highlight-grid,.hero-mini-grid,.footer-portals{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Program Nav (Di Atas Main Header dengan Underline Kuning) -->
+  <nav class="program-nav" aria-label="Navigasi program studi">
+    <div class="container">
+      <div class="program-name">S1 PENDIDIKAN PANCASILA & KEWARGANEGARAAN</div>
+      <div class="program-menu">
+        <a href="#profil">PROFIL</a>
+        <a href="#core-study">CORE STUDY</a>
+        <a href="#mitra">MITRA KERJASAMA</a>
+        <a href="#akreditasi">AKREDITASI</a>
+        <a href="#dosen">DOSEN & KEPAKARAN</a>
+        <a href="#testimoni">TESTIMONI</a>
+      </div>
+      <a class="nav-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR ↗</a>
+    </div>
+  </nav>
+
+  <!-- Main Blue Header -->
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="#top" aria-label="FKIP UNS Surakarta">
+        <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="brand-logo brand-logo--uns" />
+        <img src="Puith_Horizontal Logo.png" alt="Logo Diktisaintek Berdampak" class="brand-logo brand-logo--dikti" />
+        <span class="brand-divider" aria-hidden="true"></span>
+        <div class="brand-copy">
+          <strong>FKIP UNS SURAKARTA</strong>
+          <span>Universitas Sebelas Maret · Surakarta</span>
+        </div>
+      </a>
+      <a id="header-search" class="header-search" href="https://expert.uns.ac.id/" target="_blank" rel="noopener" aria-label="Cari kepakaran dosen PPKn UNS">
+        <span>Cari pakar PPKn & Kewarganegaraan...</span><b>⌕</b>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Banner Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div>
+          <div class="breadcrumbs">FKIP UNS / Program Sarjana (S1) / Pendidikan Pancasila & Kewarganegaraan</div>
+          <div class="hero-kicker">Program Studi Sarjana (S1)</div>
+          <h1 id="hero-title">S1 Pendidikan <span>Pancasila & Kewarganegaraan</span></h1>
+          <p>Mencetak Sarjana Pendidikan yang unggul, berkarakter Pancasila, cerdas hukum, dan berwawasan kewarganegaraan inklusif-digital untuk menjawab tantangan global dan dunia kependidikan modern.</p>
+          <div class="hero-actions">
+            <a class="btn btn-yellow" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SEKARANG →</a>
+            <a class="btn btn-outline" href="#jalur">JALUR MASUK & SYARAT</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Ringkasan S1 PPKn UNS">
+          <div class="hero-card-label">FKIP UNS <span class="tag">Sarjana (S1)</span></div>
+          <h3>Pendidikan Pancasila & Kewarganegaraan</h3>
+          <p>Fokus studi integratif meliputi Ilmu Kewarganegaraan, Hukum, Politik, Kewarganegaraan Inklusi & Digital, serta Strategi Pembelajaran Modern.</p>
+          <div class="hero-mini-grid">
+            <div class="hero-mini"><strong>S.Pd.</strong><span>Gelar yang didapatkan</span></div>
+            <div class="hero-mini"><strong>4 Tahun</strong><span>Panjang masa studi (8 SMT)</span></div>
+            <div class="hero-mini"><strong>6 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
+            <div class="hero-mini"><strong>Unggul</strong><span>Akreditasi Nasional Resmi</span></div>
+          </div>
+          <div class="accred">★ Akreditasi UNGGUL · Fasilitas Lab Media, Podcast, Hybrid Class & Lab Micro Teaching</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Highlights Ribbon Section -->
+    <section class="highlights" aria-label="Ringkasan program">
+      <div class="container">
+        <div class="highlight-grid">
+          <div class="highlight"><strong>S.Pd.</strong><span>Gelar Akademik Sarjana</span></div>
+          <div class="highlight"><strong>4 Tahun</strong><span>Panjang Masa Studi</span></div>
+          <div class="highlight"><strong>6 Bulan</strong><span>Masa Tunggu Kerja Alumni</span></div>
+          <div class="highlight"><strong>Unggul</strong><span>Status Akreditasi Resmi</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poster Overview Section -->
+    <section class="poster-summary" id="ringkasan-poster">
+      <div class="container">
+        <div class="section-title">
+          <h2>Profil Utama Program Studi S1 PPKn</h2>
+          <div class="title-line"></div>
+          <p>Informasi inti S3/S1 Pendidikan Pancasila dan Kewarganegaraan sebagaimana dirancang dalam flyer dan kurikulum resmi prodi.</p>
+        </div>
+        <div class="poster-grid">
+          <article class="poster-card">
+            <h3>Core Study</h3>
+            <p>10 Bidang Kajian Utama: <strong>Ilmu Kewarganegaraan, Hukum, Politik, Kewarganegaraan Digital & Inklusi</strong>, serta Pembelajaran PKn.</p>
+          </article>
+          <article class="poster-card">
+            <h3>Kompetensi</h3>
+            <p>Pendidikan Pancasila dan Kewarganegaraan yang menyiapkan lulusan sebagai <strong>Pendidik, Pengembang Pembelajaran, dan Analis Kebijakan</strong>.</p>
+          </article>
+          <article class="poster-card">
+            <h3>Peluang Karir</h3>
+            <p>Lulusan dipersiapkan menjadi <strong>Guru PPKn, Edupreneur, Analis Kebijakan</strong>, dan Pengembang Sumber Belajar.</p>
+          </article>
+          <article class="poster-card">
+            <h3>Fasilitas Modern</h3>
+            <p>Dukungan <strong>Lab Media, Ruang Podcast, Ruang Kelas Hybrid, dan Lab Micro Teaching</strong> berkualitas tinggi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cooperation Banner Section -->
+    <section class="cooperation" id="mitra">
+      <div class="container">
+        <div class="cooperation-box">
+          <div>
+            <h3>Mitra Kerjasama Strategis</h3>
+            <p>Kerjasama akademik, magang, dan riset tingkat nasional dan internasional untuk memperluas wawasan dan peluang karir mahasiswa.</p>
+            <div class="coop-tags">
+              <span class="coop-tag">🌐 Kerjasama Internasional (UPSI Malaysia)</span>
+              <span class="coop-tag">🏛️ AP3KnI (Asosiasi Profesi PPKn)</span>
+              <span class="coop-tag">⚖️ Komnas HAM</span>
+              <span class="coop-tag">🏫 Dinas Pendidikan Surakarta</span>
+              <span class="coop-tag">✨ Dan Lain-Lain</span>
+            </div>
+          </div>
+          <div class="cooperation-badge">Nasional & Internasional</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Study & Competency Section -->
+    <section id="profil" class="core-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fokus Studi & Kompetensi Utama</h2>
+          <div class="title-line"></div>
+          <p>Program Studi S1 Pendidikan Pancasila dan Kewarganegaraan FKIP UNS menghadirkan struktur kurikulum holistik untuk membentuk pendidik cerdas berkarakter ilmiah dan bernalar kritis.</p>
+        </div>
+
+        <div class="core-grid" id="core-study">
+          <article class="core-card">
+            <div class="core-card-header">
+              <div class="core-icon">📚</div>
+              <div>
+                <h3>Core Study (Bidang Kajian Utama)</h3>
+                <p class="subtitle">10 Keahlian Inti Kurikulum S1 PPKn UNS</p>
+              </div>
+            </div>
+            <ul class="core-list">
+              <li>Ilmu Kewarganegaraan</li>
+              <li>Konsep Dasar Kewarganegaraan</li>
+              <li>Hukum Kewarganegaraan</li>
+              <li>Politik Kewarganegaraan</li>
+              <li>Kewarganegaraan Inklusi</li>
+              <li>Kewarganegaraan Digital</li>
+              <li>Perencanaan Pembelajaran PKn</li>
+              <li>Penilaian Pembelajaran PKn</li>
+              <li>Kajian Kurikulum & Bahan Ajar PKn</li>
+              <li>Strategi Pembelajaran PKn</li>
+            </ul>
+          </article>
+
+          <article class="core-card">
+            <div class="core-card-header">
+              <div class="core-icon">🎯</div>
+              <div>
+                <h3>Kompetensi Lulusan (KKNI Level 6)</h3>
+                <p class="subtitle">Pendidikan Pancasila & Kewarganegaraan</p>
+              </div>
+            </div>
+            <ul class="core-list single-col">
+              <li><strong>Pendidik & Guru Profesional:</strong> Menguasai metodologi, teori, dan praktik pembelajaran Pancasila dan Kewarganegaraan di jenjang sekolah dasar, menengah, maupun institusi kependidikan.</li>
+              <li><strong>Pengembang Sumber Belajar:</strong> Mampu merancang media kependidikan digital, modul interaktif, dan bahan ajar kependidikan inovatif.</li>
+              <li><strong>Analis Kebijakan Pendidikan & Sosial:</strong> Memiliki kemampuan analisis kritis isu hukum, kebangsaan, HAM, dan tata kelola kewarganegaraan.</li>
+              <li><strong>Edupreneur bidang Pendidikan:</strong> Kreatif membangun platform kependidikan, pelatihan wawasan kebangsaan, dan inovasi bidang literasi kewarganegaraan.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accreditation Section -->
+    <section id="akreditasi" class="accreditation">
+      <div class="container">
+        <div class="section-title">
+          <h2>Akreditasi Program Studi</h2>
+          <div class="title-line"></div>
+          <p>S1 Pendidikan Pancasila dan Kewarganegaraan FKIP UNS memegang predikat tertinggi <strong>UNGGUL</strong> dari lembaga akreditasi penjaminan mutu kependidikan nasional.</p>
+        </div>
+        <div class="accredit-grid">
+          <article class="accredit-main" aria-label="Status akreditasi saat ini">
+            <div>
+              <div class="accredit-eyebrow">Status Akreditasi Resmi</div>
+              <div class="accredit-grade">UNGGUL</div>
+              <div class="accredit-score">Akreditasi Unggul · LAMDIK / BAN-PT</div>
+              <h3>S1 Pendidikan Pancasila & Kewarganegaraan</h3>
+              <p>Fakultas Keguruan dan Ilmu Pendidikan · Universitas Sebelas Maret</p>
+            </div>
+            <div class="accredit-period">
+              <div><small>Gelar Kelulusan</small><strong>Sarjana Pendidikan (S.Pd.)</strong></div>
+              <div><small>Standar Kualifikasi</small><strong>KKNI Level 6</strong></div>
+            </div>
+          </article>
+
+          <article class="accredit-detail">
+            <h3>Detail Sertifikat & Jaminan Mutu</h3>
+            <p>Ringkasan status penjaminan mutu pembelajaran dan indikator keberhasilan alumni S1 PPKn UNS.</p>
+            <div class="accredit-data">
+              <div class="accredit-row"><span>Lembaga Akreditasi</span><strong>Lembaga Akreditasi Mandiri Kependidikan (LAMDIK) / BAN-PT</strong></div>
+              <div class="accredit-row"><span>Gelar Akademik</span><strong>Sarjana Pendidikan (S.Pd.)</strong></div>
+              <div class="accredit-row"><span>Masa Studi Acuan</span><strong>4 Tahun (8 Semester)</strong></div>
+              <div class="accredit-row"><span>Rata-Rata Masa Tunggu Kerja</span><strong>6 Bulan setelah kelulusan</strong></div>
+              <div class="accredit-row"><span>Fasilitas Pembelajaran</span><strong>Lab Media, Ruang Podcast, Ruang Hybrid, Lab Micro Teaching</strong></div>
+            </div>
+            <div class="accredit-actions">
+              <a class="btn btn-blue" href="https://akademik.fkip.uns.ac.id/s1-pendidikan-pancasila-dan-kewarganegaraan/" target="_blank" rel="noopener">AKREDITASI FKIP UNS ↗</a>
+              <a class="mini-link" href="https://layanan-lppmp.uns.ac.id/akreditasi/prodi/s-1-pendidikan-pancasila-dan-kewarganegaraan" target="_blank" rel="noopener">Detail sertifikat UNS ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Pathways Section -->
+    <section id="jalur" class="pathways">
+      <div class="container">
+        <div class="section-title">
+          <h2>Jalur Masuk Pendaftaran SPMB UNS</h2>
+          <div class="title-line"></div>
+          <p>Berbagai skema penerimaan mahasiswa baru tingkat sarjana (S1) yang dibuka secara resmi oleh SPMB Universitas Sebelas Maret.</p>
+        </div>
+        <div class="path-grid">
+          <div class="tab-list" role="tablist" aria-label="Pilihan jalur masuk sarjana">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="snbp">SNBP & SNBT<small>Seleksi Nasional Berdasarkan Prestasi & Tes</small></button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="mandiri">MANDIRI UNS<small>Jalur Prestasi, Ujian Mandiri & Kemitraan</small></button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="beasiswa">KIP-KULIAH & BEASISWA<small>Dukungan KIP-K & Beasiswa Pemerintah/Mitra</small></button>
+          </div>
+          <div>
+            <article class="path-panel active" data-panel="snbp">
+              <h3>Seleksi Nasional (SNBP & SNBT)</h3>
+              <p>Jalur seleksi nasional untuk calon sarjana berprestasi akademik di SMA/MA/SMK sederajat melalui penilaian rapor atau Ujian Tulis Berbasis Komputer (UTBK).</p>
+              <div class="path-points">
+                <div class="path-point"><strong>Jalur SNBP (Prestasi)</strong><span>Berdasarkan prestasi akademik dan nilai rapor semester 1–5 serta portofolio tambahan.</span></div>
+                <div class="path-point"><strong>Jalur SNBT (Tes UTBK)</strong><span>Seleksi berbasis skor UTBK SNPMB nasional dengan materi Skolastik dan Literasi.</span></div>
+                <div class="path-point"><strong>Masa Studi</strong><span>4 Tahun (8 Semester) gelar Sarjana Pendidikan (S.Pd.).</span></div>
+                <div class="path-point"><strong>Informasi Resmi</strong><span>Daftar via portal resmi SNPMB Kemenristekdikti & SPMB UNS.</span></div>
+              </div>
+              <div class="note">Catatan: Pastikan memilih Prodi Pendidikan Pancasila dan Kewarganegaraan FKIP UNS sebagai Pilihan 1 untuk memperbesar peluang kelulusan.</div>
+              <div style="height:16px"></div>
+              <a class="btn btn-blue" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SPMB UNS ↗</a>
+            </article>
+
+            <article class="path-panel" data-panel="mandiri">
+              <h3>Jalur Seleksi Mandiri UNS (SM-UNS)</h3>
+              <p>Diperuntukkan bagi calon mahasiswa yang mendaftar melalui skema mandiri Universitas Sebelas Maret baik jalur Ujian Tulis Mandiri maupun Prestasi Kepemimpinan/Kepakaran.</p>
+              <div class="path-points">
+                <div class="path-point"><strong>Jalur Ujian Tulis (UTM)</strong><span>Menggunakan nilai Ujian Tulis Mandiri yang diselenggarakan oleh Panitia SPMB UNS.</span></div>
+                <div class="path-point"><strong>Jalur Prestasi & Minat</strong><span>Rekognisi prestasi olahraga, seni, keagamaan, atau kepemimpinan siswa di sekolah.</span></div>
+                <div class="path-point"><strong>Jalur Kemitraan</strong><span>Kerjasama khusus bagi pemda, dinas kependidikan, atau instansi mitra UNS.</span></div>
+                <div class="path-point"><strong>Ujian Online / Offline</strong><span>Pelaksanaan seleksi transparan dan terukur sesuai regulasi SPMB UNS.</span></div>
+              </div>
+              <div class="note">Jadwal seleksi mandiri biasanya dibuka pada pertengahan tahun berjalan. Pantau update di spmb.uns.ac.id.</div>
+              <div style="height:16px"></div>
+              <a class="btn btn-blue" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">INFORMASI JALUR MANDIRI UNS ↗</a>
+            </article>
+
+            <article class="path-panel" data-panel="beasiswa">
+              <h3>Jalur KIP-Kuliah & Beasiswa Prestasi</h3>
+              <p>Program Studi S1 PPKn UNS secara aktif memfasilitasi mahasiswa penerima Kartu Indonesia Pintar Kuliah (KIP-K) serta berbagai beasiswa instansi.</p>
+              <div class="path-points">
+                <div class="path-point"><strong>KIP-Kuliah Kemendikbud</strong><span>Pembebasan biaya UKT serta tunjangan biaya hidup bulanan bagi mahasiswa terdata KIP-K.</span></div>
+                <div class="path-point"><strong>Beasiswa Bank Indonesia / Djarum</strong><span>Kesempatan memperoleh beasiswa prestasi dari mitra industri dan perbankan selama perkuliahan.</span></div>
+                <div class="path-point"><strong>Beasiswa UNS Alumni</strong><span>Dukungan dana pendidikan dari alumni PPKn FKIP UNS bagi mahasiswa berprestasi.</span></div>
+                <div class="path-point"><strong>Pertukaran Pelajar</strong><span>Peluang mengikuti program IISMA dan MBKM Internasional (misal UPSI Malaysia).</span></div>
+              </div>
+              <div class="note">Persyaratan KIP-K diunggah secara sinkron melalui akun resmi KIP-Kuliah dan portal SPMB UNS.</div>
+              <div style="height:16px"></div>
+              <a class="btn btn-blue" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">PANDUAN BEASISWA ↗</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty & Lecturers Section -->
+    <section id="dosen" class="faculty">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pengajar & Keahlian Dosen</h2>
+          <div class="title-line"></div>
+          <p>Program Studi S1 PPKn FKIP UNS didukung oleh Guru Besar (Profesor) dan Doktor pakar di bidang Hukum, Politik, Kebijakan Publik, HAM, Ideologi Pancasila, dan Pendidikan Inklusi.</p>
+        </div>
+
+        <a class="expert-banner" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">
+          <div class="expert-brand">
+            <div class="expert-mark">E</div>
+            <div class="expert-copy"><strong>Expert UNS Kepakaran</strong><span>Temukan kepakaran dosen, publikasi riset, dan rekam jejak akademisi S1 PPKn UNS.</span></div>
+          </div>
+          <div class="expert-search-box">
+            <input type="text" id="facultySearch" placeholder="Cari dosen atau keahlian (misal: Pancasila, Hukum, HAM, Politik)...">
+            <button type="button" aria-label="Cari">⌕</button>
+          </div>
+        </a>
+
+        <div class="faculty-stats" aria-label="Statistik dosen pengajar S1 PPKn">
+          <div class="faculty-stat"><strong>14</strong><span>Total Dosen Pakar</span></div>
+          <div class="faculty-stat"><strong>2</strong><span>Guru Besar (Profesor)</span></div>
+          <div class="faculty-stat"><strong>7</strong><span>Doktor (Dr.)</span></div>
+          <div class="faculty-stat"><strong>5</strong><span>Magister / Master</span></div>
+        </div>
+        <div class="official-note" style="margin:0 0 20px"><strong>Pengajar & Keahlian Resmi:</strong> Tim pengajar berpengalaman mengampu bidang Pendidikan Kewarganegaraan, Ideologi Pancasila, Negara Hukum & HAM, Kebijakan Publik, hingga Kewarganegaraan Inklusi & Digital.</div>
+
+        <div class="faculty-grid" id="facultyList">
+          <article class="person" data-expertise="pendidikan kewarganegaraan">
+            <div class="person-head">
+              <div class="avatar">TR</div>
+              <div>
+                <h3>Dr. Triana Rejekiningsih, S.H., M.Pd.</h3>
+                <p>Dosen Pakar · Pendidikan Kewarganegaraan</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Pendidikan Kewarganegaraan</span>
+              <span class="expert-chip">Pembelajaran PKn</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="pendidikan nilai">
+            <div class="person-head">
+              <div class="avatar">MM</div>
+              <div>
+                <h3>Dr. Moh. Muchtarom, S.Ag., M.Si.</h3>
+                <p>Dosen Pakar · Pendidikan Nilai</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Pendidikan Nilai</span>
+              <span class="expert-chip">Karakter Kebangsaan</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="ideologi pancasila">
+            <div class="person-head">
+              <div class="avatar">WN</div>
+              <div>
+                <h3>Prof. Dr. Winarno, S.Pd., M.Si.</h3>
+                <p>Guru Besar · Ideologi Pancasila</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Ideologi Pancasila</span>
+              <span class="expert-chip">Filsafat Pancasila</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="negara hukum dan ham">
+            <div class="person-head">
+              <div class="avatar">TY</div>
+              <div>
+                <h3>Prof. Dr. Triyanto, S.H., M.Hum.</h3>
+                <p>Guru Besar · Negara Hukum dan HAM</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Negara Hukum</span>
+              <span class="expert-chip">Hak Asasi Manusia</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="negara hukum dan konstitusi">
+            <div class="person-head">
+              <div class="avatar">MR</div>
+              <div>
+                <h3>Dr. Machmud Al Rasyid, S.Ag., M.Si.</h3>
+                <p>Dosen Pakar · Negara Hukum dan Konstitusi</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Hukum Tata Negara</span>
+              <span class="expert-chip">Konstitusi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="kewarganegaraan lingkungan">
+            <div class="person-head">
+              <div class="avatar">DG</div>
+              <div>
+                <h3>Dr. Dewi Gunawati, S.H., M.Hum.</h3>
+                <p>Dosen Pakar · Kewarganegaraan Lingkungan</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Hukum Lingkungan</span>
+              <span class="expert-chip">Ecocitizenship</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="kebijakan publik">
+            <div class="person-head">
+              <div class="avatar">RV</div>
+              <div>
+                <h3>Dr. Rima Vien Permata H, S.H., M.H.</h3>
+                <p>Dosen Pakar · Kebijakan Publik</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Kebijakan Publik</span>
+              <span class="expert-chip">Hukum Administrasi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="hukum perjanjian">
+            <div class="person-head">
+              <div class="avatar">RT</div>
+              <div>
+                <h3>Dr. Rini Triastuti, S.H., M.Hum.</h3>
+                <p>Dosen Pakar · Hukum Perjanjian</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Hukum Perjanjian</span>
+              <span class="expert-chip">Hukum Perdata</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="pendidikan inklusi">
+            <div class="person-head">
+              <div class="avatar">HN</div>
+              <div>
+                <h3>Dr. Muh. Hendri Nuryadi, S.Pd., M.Sc.</h3>
+                <p>Dosen Pakar · Pendidikan Inklusi</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Pendidikan Inklusi</span>
+              <span class="expert-chip">Kewarganegaraan Inklusi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="penilaian pembelajaran pkn">
+            <div class="person-head">
+              <div class="avatar">WJ</div>
+              <div>
+                <h3>Wijianto, S.Pd., M.Sc.</h3>
+                <p>Dosen Pengajar · Penilaian Pembelajaran PKn</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Evaluasi Pembelajaran</span>
+              <span class="expert-chip">Kurikulum PKn</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="hukum ketenagakerjaan">
+            <div class="person-head">
+              <div class="avatar">YA</div>
+              <div>
+                <h3>Yudi Ariana, S.H., M.H.</h3>
+                <p>Dosen Pengajar · Hukum Ketenagakerjaan</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Hukum Ketenagakerjaan</span>
+              <span class="expert-chip">Hukum Kerja</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="ilmu kewarganegaraan">
+            <div class="person-head">
+              <div class="avatar">RJ</div>
+              <div>
+                <h3>Raharjo, S.Pd., M.Sc.</h3>
+                <p>Dosen Pengajar · Ilmu Kewarganegaraan</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Ilmu Kewarganegaraan</span>
+              <span class="expert-chip">Teori Politik</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="pendidikan politik">
+            <div class="person-head">
+              <div class="avatar">AS</div>
+              <div>
+                <h3>Anis Suryaningsih, S.Pd., M.Sc.</h3>
+                <p>Dosen Pengajar · Pendidikan Politik</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Pendidikan Politik</span>
+              <span class="expert-chip">Partisipasi Warga</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="hukum administrasi negara">
+            <div class="person-head">
+              <div class="avatar">WN</div>
+              <div>
+                <h3>Widya Noventari, S.Pd., M.Sc.</h3>
+                <p>Dosen Pengajar · Hukum Administrasi Negara</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Hukum Administrasi</span>
+              <span class="expert-chip">Tata Kelola Negara</span>
+            </div>
+          </article>
+        </div>
+        <div class="faculty-cta" style="margin-top:24px;display:flex;justify-content:center">
+          <a class="btn btn-blue" href="#header-search">TELUSURI DOSEN DI EXPERT UNS ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials & Alumni Portrait Section -->
+    <section id="testimoni" class="testimonials-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Potret Lulusan Terbaik & Testimoni</h2>
+          <div class="title-line"></div>
+          <p>Kisah inspiratif alumni dan pengalaman nyata mahasiswa aktif S1 Pendidikan Pancasila dan Kewarganegaraan FKIP UNS.</p>
+        </div>
+
+        <div class="best-graduate">
+          <div style="text-align:center">
+            <div class="grad-photo">MC</div>
+            <div style="background:#0369A1;color:#fff;padding:3px 10px;border-radius:4px;font-size:10px;font-weight:800;margin-top:8px">Alumni 2008</div>
+          </div>
+          <div class="grad-info">
+            <span class="grad-badge">Potret Lulusan Terbaik</span>
+            <h4>Miftah Churohman, S.Pd.</h4>
+            <p style="color:#0F5B80;font-weight:700;margin-bottom:6px">Kepala Sekolah Semarang Multinational School (Alumni Angkatan 2008)</p>
+            <p>Berhasil menapak karir kepemimpinan kependidikan nasional dan internasional dari seorang guru hingga dipercaya menjadi Kepala Sekolah di institusi sekolah internasional bereputasi.</p>
+          </div>
+        </div>
+
+        <div class="testi-grid">
+          <article class="testi-card">
+            <div>
+              <span class="testi-tag">Testimoni Alumni</span>
+              <p class="testi-quote">
+                "Pengalaman kuliah di PPKN FKIP bukan sekadar teori, tapi pembentukan karakter. Bekal mental dan akademik dari kampus inilah yang mengantarkan saya menapak jenjang karier dari seorang guru hingga sukses memimpin sebagai Kepala Sekolah Internasional."
+              </p>
+            </div>
+            <div class="testi-author">
+              <div class="author-img">MC</div>
+              <div class="author-info">
+                <strong>Miftah Churohman – Alumni 2008</strong>
+                <span>Kepala Sekolah Semarang Multinational School</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testi-card mahasiswa">
+            <div>
+              <span class="testi-tag" style="background:#FFF9D6;color:#0F5B80">Testimoni Mahasiswa</span>
+              <p class="testi-quote">
+                "Di Prodi PPKn FKIP UNS, saya tidak hanya belajar tentang akademik di kelas, namun saya juga dapat mengembangkan diri dengan berorganisasi dan mengikuti berbagai macam perlombaan baik nasional dan internasional dengan bimbingan Bapak/Ibu Dosen Prodi PPKn saya mendapatkan prestasi akademik yang baik dan juga dapat berprestasi di kompetisi nasional dan internasional."
+              </p>
+            </div>
+            <div class="testi-author">
+              <div class="author-img">AK</div>
+              <div class="author-info">
+                <strong>Amalia Khasanah – Angkatan 2021</strong>
+                <span>Mahasiswa Aktif S1 PPKn FKIP UNS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career & Facilities Section -->
+    <section class="career-facility">
+      <div class="container">
+        <div class="section-title">
+          <h2>Peluang Karir & Fasilitas Laboratorium</h2>
+          <div class="title-line"></div>
+          <p>Lulusan S1 PPKn UNS dibekali keterampilan kependidikan abad-21 dan didukung sarana prasarana perkuliahan yang modern.</p>
+        </div>
+
+        <div class="cf-grid">
+          <div class="cf-box">
+            <h3><span>💼</span> Peluang Karir Lulusan</h3>
+            <div class="cf-items">
+              <div class="cf-item">Guru / Pendidik PPKn Profesional di Sekolah & Lembaga Kependidikan</div>
+              <div class="cf-item">Penyusun dan Pengembang Sumber Belajar / Bahan Ajar Digital</div>
+              <div class="cf-item">Analis Kebijakan Pendidikan, Kebangsaan & Isu Sosial (Policy Analyst)</div>
+              <div class="cf-item">Entrepreneur bidang Pendidikan (Edupreneur Literasi Kewarganegaraan)</div>
+            </div>
+          </div>
+
+          <div class="cf-box">
+            <h3><span>🏛️</span> Fasilitas Pembelajaran & Laboratorium</h3>
+            <div class="cf-items">
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Ruang Kelas Interaktif Modern</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Lab Media Pembelajaran PKn</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Ruang Podcast Kependidikan</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Ruang Kelas Hybrid (Blended Learning)</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Lab Micro Teaching Terstandar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPMB Information Section -->
+    <section id="spmb" class="spmb-info">
+      <div class="container">
+        <div class="section-title">
+          <h2>Informasi Pendaftaran SPMB UNS</h2>
+          <div class="title-line"></div>
+          <p>Panduan lengkap tahapan pendaftaran online dan persyaratan kelengkapan berkas calon mahasiswa S1 PPKn UNS.</p>
+        </div>
+
+        <div class="spmb-summary">
+          <div class="spmb-stat">
+            <strong>4 Tahun</strong>
+            <span>Masa Studi Acuan Sarjana (8 Semester)</span>
+          </div>
+          <div class="spmb-stat">
+            <strong>6 Bulan</strong>
+            <span>Rata-Rata Masa Tunggu Kerja Alumni</span>
+          </div>
+          <div class="spmb-stat">
+            <strong>Unggul</strong><span>Predikat Akreditasi Nasional Resmi</span>
+          </div>
+        </div>
+
+        <div class="spmb-grid">
+          <article class="info-card">
+            <h3>Alur Pendaftaran Online SPMB</h3>
+            <p>Tahapan pendaftaran terpusat melalui portal SPMB Universitas Sebelas Maret.</p>
+            <div class="flow">
+              <div class="flow-step">
+                <strong>1. Registrasi Akun SPMB UNS</strong>
+                Buka portal resmi spmb.uns.ac.id dan pilih jenjang Sarjana (S1).
+              </div>
+              <div class="flow-step">
+                <strong>2. Pembayaran Biaya Pendaftaran</strong>
+                Lakukan pembayaran melalui bank mitra resmi (BNI, Mandiri, BRI, BTN) menggunakan kode pendaftaran.
+              </div>
+              <div class="flow-step">
+                <strong>3. Pengisian Data & Unggah Berkas</strong>
+                Unggah nilai rapor, sertifikat prestasi, foto resmi, dan dokumen identitas pendukung.
+              </div>
+              <div class="flow-step">
+                <strong>4. Pencetakan Kartu Ujian / Peserta</strong>
+                Panitia melakukan verifikasi dokumen hingga kartu tanda peserta berhasil diunduh.
+              </div>
+              <div class="flow-step">
+                <strong>5. Pelaksanaan Ujian & Pengumuman</strong>
+                Mengikuti seleksi sesuai jalur pilihan (SNBP / SNBT / SM-UNS) hingga pengumuman resmi.
+              </div>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <h3>Persyaratan Kelengkapan Berkas</h3>
+            <p>Daftar dokumen umum yang perlu disiapkan oleh pendaftar.</p>
+            <div class="requirement-list">
+              <div class="requirement">
+                <strong>Ijazah / Surat Keterangan Lulus</strong>
+                Lulusan SMA/MA/SMK sederajat dengan kelengkapan legalisir.
+              </div>
+              <div class="requirement">
+                <strong>Nilai Rapor & Transkrip</strong>
+                Nilai rapor semester 1 s.d 5 untuk jalur prestasi.
+              </div>
+              <div class="requirement">
+                <strong>Sertifikat Prestasi (Jika Ada)</strong>
+                Sertifikat perlombaan akademik, sains, seni, atau olahraga.
+              </div>
+              <div class="requirement">
+                <strong>Kartu KIP-Kuliah (Khusus KIP-K)</strong>
+                Bukti pendaftaran akun KIP-Kuliah Kemendikbud.
+              </div>
+              <div class="requirement">
+                <strong>Pasfoto Resmi Terbaru</strong>
+                Pasfoto berlatar belakang warna sesuai ketentuan SPMB.
+              </div>
+              <div class="requirement">
+                <strong>Kartu Identitas (KTP / KK)</strong>
+                Nomor Induk Kependudukan (NIK) valid terdaftar di Dukcapil.
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="official-note">
+          <strong>Informasi Resmi Tambahan:</strong> Seluruh ketentuan mengenai jadwal pendaftaran, syarat khusus, dan pengumuman hasil seleksi mengikuti regulasi Panitia Penerimaan Mahasiswa Baru (SPMB) Universitas Sebelas Maret.
+          <div class="source-links">
+            <a class="mini-link" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">Portal SPMB UNS ↗</a>
+            <a class="mini-link" href="https://ppkn.fkip.uns.ac.id/" target="_blank" rel="noopener">Website S1 PPKn FKIP UNS ↗</a>
+            <a class="mini-link" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">Website FKIP UNS ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Call to Action Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Siap Menjadi Pendidik & Cendekiawan Kewarganegaraan Berkarakter?</h2>
+            <p>Bergabunglah bersama Program Studi S1 Pendidikan Pancasila dan Kewarganegaraan FKIP Universitas Sebelas Maret Surakarta. Daftarkan diri Anda pada pendaftaran SPMB UNS!</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-yellow" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SEKARANG →</a>
+            <a class="btn btn-outline" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">PORTAL SPMB</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- UNS Dark Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-portals">
+        <a class="portal" href="https://uns.ac.id/" target="_blank" rel="noopener">UNS<small>UNIVERSITAS SEBELAS MARET</small></a>
+        <a class="portal" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP<small>FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN</small></a>
+        <a class="portal" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB<small>PENERIMAAN MAHASISWA BARU</small></a>
+        <a class="portal" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">EXPERT<small>PORTAL KEPAKARAN UNS</small></a>
+        <a class="portal" href="https://ppkn.fkip.uns.ac.id/" target="_blank" rel="noopener">S1PPKn<small>S1 PENDIDIKAN PANCASILA DAN KEWARGANEGARAAN</small></a>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="logo-img-foot" />
+          </div>
+          <div class="foot-text">
+            Program Studi S1 Pendidikan Pancasila dan Kewarganegaraan - Fakultas Keguruan dan Ilmu Pendidikan (FKIP) Universitas Sebelas Maret.
+            <br>Jl. Ir. Sutami 36A Kentingan, Jebres, Surakarta, Jawa Tengah 57126.
+          </div>
+        </div>
+
+        <div>
+          <div class="foot-title">Layanan & Portal</div>
+          <div class="foot-links">
+            <a href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS Portal</a>
+            <a href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Expert UNS Kepakaran</a>
+            <a href="https://ppkn.fkip.uns.ac.id/" target="_blank" rel="noopener">Website S1 Pend. PPKn</a>
+            <a href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">Portal FKIP UNS</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="foot-title">Navigasi Landing</div>
+          <div class="foot-links">
+            <a href="#profil">Profil Program</a>
+            <a href="#core-study">Core Study & Kompetensi</a>
+            <a href="#jalur">Jalur Masuk</a>
+            <a href="#akreditasi">Akreditasi Program</a>
+            <a href="#dosen">Dosen & Kepakaran</a>
+            <a href="#testimoni">Testimoni Alumni</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        Copyright © 2026 FKIP Universitas Sebelas Maret
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile CTA -->
+  <a class="mobile-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">
+    DAFTAR S1 PPKn UNS SEKARANG →
+  </a>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Dynamic Tab Switching for Admission Pathways (Jalur Masuk)
+    const buttons = document.querySelectorAll('[data-tab]');
+    const panels = document.querySelectorAll('[data-panel]');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      const key = btn.dataset.tab;
+      buttons.forEach(b => {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === key));
+    }));
+
+    // Real-time Search Filter for Dosen & Kepakaran
+    const searchInput = document.getElementById('facultySearch');
+    const facultyList = document.getElementById('facultyList');
+    if (searchInput && facultyList) {
+      const facultyCards = facultyList.querySelectorAll('.person');
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        facultyCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
